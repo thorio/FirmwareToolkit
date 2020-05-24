@@ -1,14 +1,11 @@
 ﻿using Sandbox.ModAPI.Ingame;
 using System.Collections.Generic;
 
-namespace IngameScript
+namespace IngameScript.Selectors
 {
-	partial class Program
+	interface ISelector<T>
 	{
-		interface ISelector<T>
-		{
-			ISelector<TCast> As<TCast>() where TCast : IMyTerminalBlock;
-			IEnumerable<T> GetBlocks();
-		}
+		ISelector<TCast> As<TCast>() where TCast : IMyTerminalBlock;
+		IEnumerable<T> GetBlocks();
 	}
 }

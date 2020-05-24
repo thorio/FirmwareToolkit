@@ -1,22 +1,19 @@
 ﻿using System;
 
-namespace IngameScript
+namespace IngameScript.Actions
 {
-	partial class Program
+	class ScriptableAction : IAction
 	{
-		class ScriptableAction : IAction
+		private readonly Action _action;
+
+		public ScriptableAction(Action action)
 		{
-			private readonly Action _action;
+			_action = action;
+		}
 
-			public ScriptableAction(Action action)
-			{
-				_action = action;
-			}
-
-			public void Execute()
-			{
-				_action();
-			}
+		public void Execute()
+		{
+			_action();
 		}
 	}
 }

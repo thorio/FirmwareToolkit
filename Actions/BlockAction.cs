@@ -1,23 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using IngameScript.Selectors;
+using System.Collections.Generic;
 
-namespace IngameScript
+namespace IngameScript.Actions
 {
-	partial class Program
+	abstract class BlockAction<T> : IAction
 	{
-		abstract class BlockAction<T> : IAction
+		protected readonly ISelector<T> _selector;
+		public BlockAction(ISelector<T> selector)
 		{
-			protected readonly ISelector<T> _selector;
-			public BlockAction(ISelector<T> selector)
-			{
-				_selector = selector;
-			}
-
-			public void Execute()
-			{
-				Execute(_selector.GetBlocks());
-			}
-
-			protected abstract void Execute(IEnumerable<T> blocks);
+			_selector = selector;
 		}
+
+		public void Execute()
+		{
+			Execute(_selector.GetBlocks());
+		}
+
+		protected abstract void Execute(IEnumerable<T> blocks);
 	}
 }

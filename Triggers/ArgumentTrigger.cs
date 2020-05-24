@@ -1,35 +1,32 @@
 ﻿namespace IngameScript
 {
-	partial class Program
+	/// <summary>
+	/// Triggers when the block is run with a matching argument
+	/// </summary>
+	class ArgumentTrigger : BaseTrigger
 	{
-		/// <summary>
-		/// Triggers when the block is run with a matching argument
-		/// </summary>
-		class ArgumentTrigger : BaseTrigger
+		private readonly string _exactMatch;
+		private readonly System.Text.RegularExpressions.Regex _expression;
+
+		public ArgumentTrigger(string argument)
 		{
-			private string _exactMatch;
-			private System.Text.RegularExpressions.Regex _expression;
+			_exactMatch = argument;
+		}
 
-			public ArgumentTrigger(string argument)
+		public ArgumentTrigger(System.Text.RegularExpressions.Regex expression)
+		{
+			_expression = expression;
+		}
+
+		public void Update(string argument)
+		{
+			if (_expression?.IsMatch(argument) == true)
 			{
-				_exactMatch = argument;
+				Trigger();
 			}
-
-			public ArgumentTrigger(System.Text.RegularExpressions.Regex expression)
+			else if (argument == _exactMatch)
 			{
-				_expression = expression;
-			}
-
-			public void Update(string argument)
-			{
-				if (_expression?.IsMatch(argument) == true)
-				{
-					Trigger();
-				}
-				else if (argument == _exactMatch)
-				{
-					Trigger();
-				}
+				Trigger();
 			}
 		}
 	}

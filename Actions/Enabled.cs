@@ -1,12 +1,9 @@
-﻿namespace IngameScript
+﻿namespace IngameScript.Actions
 {
-	partial class Program
+	enum Enabled
 	{
-		enum Enabled
-		{
-			Off,
-			On,
-			Toggle,
-		}
+		Off,
+		On,
+		Toggle,
 	}
 }

@@ -38,8 +38,8 @@
   <Import Project="MDK/MDK.options.props" />
   <Import Project="MDK/MDK.paths.props" Condition="exists('MDK/MDK.paths.props')" />
   <ItemGroup>
-    <Compile Include="Triggers\ArgumentTrigger.cs" />
     <Compile Include="Selectors\BaseSelector.cs" />
+    <Compile Include="Triggers\ArgumentTrigger.cs" />
     <Compile Include="Triggers\BaseTrigger.cs" />
     <Compile Include="Actions\BlockAction.cs" />
     <Compile Include="Selectors\CastSelector.cs" />
@@ -66,6 +66,9 @@
     <Compile Include="Triggers\ScriptableTrigger.cs" />
     <Compile Include="Selectors\TagSelector.cs" />
     <Compile Include="Triggers\TriggerSet.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterBuild">

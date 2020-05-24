@@ -1,4 +1,7 @@
-﻿using Sandbox.ModAPI.Ingame;
+﻿using IngameScript.Actions;
+using IngameScript.Selectors;
+using IngameScript.Triggers;
+using Sandbox.ModAPI.Ingame;
 using SpaceEngineers.Game.ModAPI.Ingame;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,21 +10,19 @@ namespace IngameScript
 {
 	partial class Program : MyGridProgram
 	{
-		#region mdk preserve
 		const UpdateFrequency Frequency = UpdateFrequency.Update10;
 
 		void Configure(TriggerSet triggers)
 		{
-			new ArgumentTrigger(new System.Text.RegularExpressions.Regex("Light"))
-				.AddAction(new OnOffAction(Tag<IMyInteriorLight>("[MyLight]").As<IMyFunctionalBlock>(), Enabled.Toggle))
+			new ArgumentTrigger("Light")
+				.AddAction(new OnOffAction(Tag("[MyLight]").As<IMyFunctionalBlock>(), Enabled.Toggle))
 				.RegisterIn(triggers);
 		}
-		#endregion
 
 		public static Program Instance { get; private set; }
 
-		private List<ArgumentTrigger> _argumentTriggers;
-		private List<BaseTrigger> _triggers;
+		private readonly List<ArgumentTrigger> _argumentTriggers;
+		private readonly List<BaseTrigger> _triggers;
 
 		public Program()
 		{

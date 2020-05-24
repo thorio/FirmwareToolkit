@@ -3,25 +3,22 @@ using Sandbox.ModAPI.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace IngameScript
+namespace IngameScript.Selectors
 {
-	partial class Program
+	class CastSelector<TSource, TTarget> : BaseSelector<TTarget> where TTarget : IMyTerminalBlock
 	{
-		class CastSelector<TSource, TTarget> : BaseSelector<TTarget> where TTarget : IMyTerminalBlock
+		private ISelector<TSource> _selector;
+
+		public CastSelector(ISelector<TSource> selector)
 		{
-			private ISelector<TSource> _selector;
+			_selector = selector;
+		}
 
-			public CastSelector(ISelector<TSource> selector)
-			{
-				_selector = selector;
-			}
-
-			public override IEnumerable<TTarget> GetBlocks_Inner()
-			{
-				var blocks = _selector.GetBlocks();
-				_selector = null; // cleanup reference so GC can kick in
-				return blocks.Cast<TTarget>();
-			}
+		public override IEnumerable<TTarget> GetBlocks_Inner()
+		{
+			var blocks = _selector.GetBlocks();
+			_selector = null; // cleanup reference so GC can kick in
+			return blocks.Cast<TTarget>();
 		}
 	}
 }

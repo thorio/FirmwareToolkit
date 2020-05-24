@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# InconsistentNamespaceDeclaration: All ingame script code should be within the IngameScript namespace in order to avoid problems.
+dotnet_diagnostic.InconsistentNamespaceDeclaration.severity = none

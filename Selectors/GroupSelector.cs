@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using IngameScript.Extensions;
 
-namespace IngameScript
+namespace IngameScript.Selectors
 {
-	partial class Program
+	class GroupSelector<T> : BaseSelector<T> where T : IMyTerminalBlock
 	{
-		class GroupSelector<T> : BaseSelector<T> where T : IMyTerminalBlock
-		{
-			public GroupSelector(string name) : base(name) { }
+		public GroupSelector(string name) : base(name) { }
 
-			public override IEnumerable<T> GetBlocks_Inner() =>
-				Instance.GridTerminalSystem.GetBlockGroupWithName(_identifier).GetBlocks().OfType<T>();
-		}
+		public override IEnumerable<T> GetBlocks_Inner() =>
+			Program.Instance.GridTerminalSystem.GetBlockGroupWithName(_identifier).GetBlocks().OfType<T>();
 	}
 }

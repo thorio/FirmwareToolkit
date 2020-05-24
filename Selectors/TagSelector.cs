@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using IngameScript.Extensions;
 
-namespace IngameScript
+namespace IngameScript.Selectors
 {
-	partial class Program
+	class TagSelector<T> : BaseSelector<T> where T : IMyTerminalBlock
 	{
-		class TagSelector<T> : BaseSelector<T> where T : IMyTerminalBlock
-		{
-			public TagSelector(string tag) : base(tag) { }
+		public TagSelector(string tag) : base(tag) { }
 
-			public override IEnumerable<T> GetBlocks_Inner() =>
-				Instance.GridTerminalSystem.GetBlocksWithTag(_identifier).OfType<T>();
-		}
+		public override IEnumerable<T> GetBlocks_Inner() =>
+			Program.Instance.GridTerminalSystem.GetBlocksWithTag(_identifier).OfType<T>();
 	}
 }

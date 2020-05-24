@@ -2,23 +2,20 @@
 
 namespace IngameScript
 {
-	partial class Program
+	class ScriptableTrigger : BaseTrigger
 	{
-		class ScriptableTrigger : BaseTrigger
+		private readonly Func<bool> _action;
+
+		public ScriptableTrigger(Func<bool> action)
 		{
-			private readonly Func<bool> _action;
+			_action = action;
+		}
 
-			public ScriptableTrigger(Func<bool> action)
+		public override void Update()
+		{
+			if (_action())
 			{
-				_action = action;
-			}
-
-			public override void Update()
-			{
-				if (_action())
-				{
-					Trigger();
-				}
+				Trigger();
 			}
 		}
 	}

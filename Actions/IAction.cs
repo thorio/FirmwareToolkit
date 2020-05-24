@@ -1,10 +1,7 @@
-﻿namespace IngameScript
+﻿namespace IngameScript.Actions
 {
-	partial class Program
+	interface IAction
 	{
-		interface IAction
-		{
-			void Execute();
-		}
+		void Execute();
 	}
 }

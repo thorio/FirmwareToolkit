@@ -1,36 +1,33 @@
 ﻿using System.Collections.Generic;
 
-namespace IngameScript
+namespace IngameScript.Triggers
 {
-	partial class Program
+	class TriggerSet : ITriggerSet
 	{
-		class TriggerSet : ITriggerSet
+		public TriggerSet()
 		{
-			public TriggerSet()
-			{
-				_triggers = new List<BaseTrigger>();
-			}
+			_triggers = new List<BaseTrigger>();
+		}
 
-			private List<BaseTrigger> _triggers;
+		private readonly List<BaseTrigger> _triggers;
 
-			public IEnumerable<BaseTrigger> Triggers => _triggers;
+		public IEnumerable<BaseTrigger> Triggers => _triggers;
 
-			public TriggerSet Register(BaseTrigger trigger)
-			{
-				_triggers.Add(trigger);
-				return this;
-			}
+		public TriggerSet Register(BaseTrigger trigger)
+		{
+			_triggers.Add(trigger);
+			return this;
+		}
 
-			public TriggerSet Register(IEnumerable<BaseTrigger> triggers)
-			{
-				_triggers.AddRange(triggers);
-				return this;
-			}
+		public TriggerSet Register(IEnumerable<BaseTrigger> triggers)
+		{
+			_triggers.AddRange(triggers);
+			return this;
+		}
 
-			public TriggerSet Register(ITriggerSet triggerSet)
-			{
-				return Register(triggerSet.Triggers);
-			}
+		public TriggerSet Register(ITriggerSet triggerSet)
+		{
+			return Register(triggerSet.Triggers);
 		}
 	}
 }

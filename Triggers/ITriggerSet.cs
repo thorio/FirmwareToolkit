@@ -2,11 +2,8 @@
 
 namespace IngameScript
 {
-	partial class Program
+	interface ITriggerSet
 	{
-		interface ITriggerSet
-		{
-			IEnumerable<BaseTrigger> Triggers { get; }
-		}
+		IEnumerable<BaseTrigger> Triggers { get; }
 	}
 }
