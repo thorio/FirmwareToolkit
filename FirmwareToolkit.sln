@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirmwareToolkit", "FirmwareToolkit.csproj", "{480CE19A-AB92-4AA3-86AA-3D200512FD2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{480CE19A-AB92-4AA3-86AA-3D200512FD2F}.Debug|x64.ActiveCfg = Debug|x64
+		{480CE19A-AB92-4AA3-86AA-3D200512FD2F}.Debug|x64.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A8CE8A5-7884-4A02-AF76-C11609C56EC1}
+	EndGlobalSection
+EndGlobal
