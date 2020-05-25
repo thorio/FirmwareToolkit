@@ -39,6 +39,7 @@
   <Import Project="MDK/MDK.paths.props" Condition="exists('MDK/MDK.paths.props')" />
   <ItemGroup>
     <Compile Include="Selectors\BaseSelector.cs" />
+    <Compile Include="Selectors\NameSelector.cs" />
     <Compile Include="Triggers\ArgumentTrigger.cs" />
     <Compile Include="Triggers\BaseTrigger.cs" />
     <Compile Include="Actions\BlockAction.cs" />
