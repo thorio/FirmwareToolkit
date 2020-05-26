@@ -1,4 +1,4 @@
-﻿namespace IngameScript
+﻿namespace IngameScript.Triggers
 {
 	/// <summary>
 	/// Triggers when the block is run with a matching argument

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace IngameScript
+namespace IngameScript.Triggers
 {
 	class ScriptableTrigger : BaseTrigger
 	{

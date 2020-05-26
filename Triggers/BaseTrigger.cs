@@ -1,8 +1,7 @@
 ﻿using IngameScript.Actions;
-using IngameScript.Triggers;
 using System.Collections.Generic;
 
-namespace IngameScript
+namespace IngameScript.Triggers
 {
 	abstract class BaseTrigger
 	{
