@@ -38,12 +38,13 @@
   <Import Project="MDK/MDK.options.props" />
   <Import Project="MDK/MDK.paths.props" Condition="exists('MDK/MDK.paths.props')" />
   <ItemGroup>
+    <Compile Include="Firmware.cs" />
     <Compile Include="Selectors\BaseSelector.cs" />
     <Compile Include="Selectors\NameSelector.cs" />
     <Compile Include="Special\BaseSpecial.cs" />
     <Compile Include="Special\Condition.cs" />
     <Compile Include="Triggers\ArgumentTrigger.cs" />
-    <Compile Include="Triggers\ChildActionHaver.cs" />
+    <Compile Include="Triggers\ActionContainer.cs" />
     <Compile Include="Triggers\Trigger.cs" />
     <Compile Include="Actions\BlockAction.cs" />
     <Compile Include="Selectors\CastSelector.cs" />

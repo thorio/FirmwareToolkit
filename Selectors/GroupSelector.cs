@@ -10,6 +10,6 @@ namespace IngameScript.Selectors
 		public GroupSelector(string name) : base(name) { }
 
 		public override IEnumerable<T> GetBlocks_Inner() =>
-			Program.Instance.GridTerminalSystem.GetBlockGroupWithName(_identifier).GetBlocks().OfType<T>();
+			Firmware.Grid.GetBlockGroupWithName(_identifier).GetBlocks().OfType<T>();
 	}
 }

@@ -4,6 +4,7 @@ using IngameScript.Special;
 using IngameScript.Triggers;
 using Sandbox.ModAPI.Ingame;
 using SpaceEngineers.Game.ModAPI.Ingame;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -51,34 +52,17 @@ namespace IngameScript
 		#endregion
 
 		#region Program
-		public static Program Instance { get; private set; }
-
-		private readonly List<ArgumentTrigger> _argumentTriggers;
-		private readonly List<Trigger> _triggers;
+		private Firmware _firmware;
 
 		public Program()
 		{
-			Instance = this;
 			Runtime.UpdateFrequency = Frequency;
-
-			var triggerSet = new TriggerSet();
-			Configure(triggerSet);
-			_argumentTriggers = triggerSet.Triggers.OfType<ArgumentTrigger>().ToList();
-			_triggers = triggerSet.Triggers.Where(x => !(x is ArgumentTrigger)).ToList();
+			_firmware = new Firmware(this, Configure);
 		}
 
 		public void Main(string argument, UpdateType updateType)
 		{
-			switch (updateType)
-			{
-				case UpdateType.Terminal:
-				case UpdateType.Trigger:
-					_argumentTriggers.ForEach(t => t.Update(argument));
-					break;
-				default:
-					_triggers.ForEach(t => t.Update());
-					break;
-			}
+			_firmware.Update(argument, updateType);
 		}
 		#endregion
 
