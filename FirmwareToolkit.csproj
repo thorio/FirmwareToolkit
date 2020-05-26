@@ -39,6 +39,8 @@
   <Import Project="MDK/MDK.paths.props" Condition="exists('MDK/MDK.paths.props')" />
   <ItemGroup>
     <Compile Include="Firmware.cs" />
+    <Compile Include="Timing\Timer.cs" />
+    <Compile Include="Timing\TimingManager.cs" />
     <Compile Include="Selectors\BaseSelector.cs" />
     <Compile Include="Selectors\NameSelector.cs" />
     <Compile Include="Special\BaseSpecial.cs" />

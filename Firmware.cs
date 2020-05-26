@@ -22,6 +22,7 @@ namespace IngameScript
 			}
 			Instance = this;
 			Program = program;
+			TimingManager = new TimingManager(Program.Runtime);
 
 			var triggerSet = new TriggerSet();
 			configureAction(triggerSet);
@@ -30,9 +31,11 @@ namespace IngameScript
 		}
 
 		public Program Program { get; }
+		public TimingManager TimingManager { get; }
 
 		public void Update(string argument, UpdateType updateType)
 		{
+			TimingManager.Update();
 			switch (updateType)
 			{
 				case UpdateType.Terminal:
