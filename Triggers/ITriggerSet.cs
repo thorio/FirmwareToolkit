@@ -4,6 +4,6 @@ namespace IngameScript.Triggers
 {
 	interface ITriggerSet
 	{
-		IEnumerable<BaseTrigger> Triggers { get; }
+		IEnumerable<Trigger> Triggers { get; }
 	}
 }

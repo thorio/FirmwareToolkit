@@ -6,20 +6,20 @@ namespace IngameScript.Triggers
 	{
 		public TriggerSet()
 		{
-			_triggers = new List<BaseTrigger>();
+			_triggers = new List<Trigger>();
 		}
 
-		private readonly List<BaseTrigger> _triggers;
+		private readonly List<Trigger> _triggers;
 
-		public IEnumerable<BaseTrigger> Triggers => _triggers;
+		public IEnumerable<Trigger> Triggers => _triggers;
 
-		public TriggerSet Register(BaseTrigger trigger)
+		public TriggerSet Register(Trigger trigger)
 		{
 			_triggers.Add(trigger);
 			return this;
 		}
 
-		public TriggerSet Register(IEnumerable<BaseTrigger> triggers)
+		public TriggerSet Register(IEnumerable<Trigger> triggers)
 		{
 			_triggers.AddRange(triggers);
 			return this;

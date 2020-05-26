@@ -3,7 +3,7 @@
 	/// <summary>
 	/// Triggers when the block is run with a matching argument
 	/// </summary>
-	class ArgumentTrigger : BaseTrigger
+	class ArgumentTrigger : Trigger
 	{
 		private readonly string _exactMatch;
 		private readonly System.Text.RegularExpressions.Regex _expression;
@@ -20,13 +20,9 @@
 
 		public void Update(string argument)
 		{
-			if (_expression?.IsMatch(argument) == true)
+			if (_expression?.IsMatch(argument) == true || argument == _exactMatch)
 			{
-				Trigger();
-			}
-			else if (argument == _exactMatch)
-			{
-				Trigger();
+				Run();
 			}
 		}
 	}

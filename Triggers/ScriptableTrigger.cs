@@ -2,7 +2,7 @@
 
 namespace IngameScript.Triggers
 {
-	class ScriptableTrigger : BaseTrigger
+	class ScriptableTrigger : Trigger
 	{
 		private readonly Func<bool> _action;
 
@@ -15,7 +15,7 @@ namespace IngameScript.Triggers
 		{
 			if (_action())
 			{
-				Trigger();
+				Run();
 			}
 		}
 	}

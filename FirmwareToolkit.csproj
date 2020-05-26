@@ -40,8 +40,11 @@
   <ItemGroup>
     <Compile Include="Selectors\BaseSelector.cs" />
     <Compile Include="Selectors\NameSelector.cs" />
+    <Compile Include="Special\BaseSpecial.cs" />
+    <Compile Include="Special\Condition.cs" />
     <Compile Include="Triggers\ArgumentTrigger.cs" />
-    <Compile Include="Triggers\BaseTrigger.cs" />
+    <Compile Include="Triggers\ChildActionHaver.cs" />
+    <Compile Include="Triggers\Trigger.cs" />
     <Compile Include="Actions\BlockAction.cs" />
     <Compile Include="Selectors\CastSelector.cs" />
     <Compile Include="Actions\Enabled.cs" />
