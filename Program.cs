@@ -4,9 +4,6 @@ using IngameScript.Special;
 using IngameScript.Triggers;
 using Sandbox.ModAPI.Ingame;
 using SpaceEngineers.Game.ModAPI.Ingame;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace IngameScript
 {
@@ -29,12 +26,22 @@ namespace IngameScript
 		//
 		void Configure(TriggerSet triggers)
 		{
-			var myCondition = true;
-			
 			new ArgumentTrigger("Light")
-				.Then(new Condition(() => myCondition)
+				.Then(new Delay(500)
 					.Then(new OnOffAction(Tag<IMyFunctionalBlock>("[MyLight]"), Enabled.Toggle))
 					)
+				.RegisterIn(triggers);
+
+			var myCondition = false;
+
+			new ArgumentTrigger("ToggleLight")
+				.Then(new ScriptableAction(() => myCondition = !myCondition))
+				.RegisterIn(triggers);
+
+			new IntervalTrigger(1000)
+				.Then(new Condition(() => myCondition)
+					.Then(new OnOffAction(Tag<IMyFunctionalBlock>("[MyLight2]"), Enabled.Toggle))
+				)
 				.RegisterIn(triggers);
 		}
 		//

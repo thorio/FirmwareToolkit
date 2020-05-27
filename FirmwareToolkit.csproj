@@ -39,6 +39,7 @@
   <Import Project="MDK/MDK.paths.props" Condition="exists('MDK/MDK.paths.props')" />
   <ItemGroup>
     <Compile Include="Firmware.cs" />
+    <Compile Include="Special\Delay.cs" />
     <Compile Include="Timing\Timer.cs" />
     <Compile Include="Timing\TimingManager.cs" />
     <Compile Include="Selectors\BaseSelector.cs" />
@@ -47,6 +48,7 @@
     <Compile Include="Special\Condition.cs" />
     <Compile Include="Triggers\ArgumentTrigger.cs" />
     <Compile Include="Triggers\ActionContainer.cs" />
+    <Compile Include="Triggers\IntervalTrigger.cs" />
     <Compile Include="Triggers\Trigger.cs" />
     <Compile Include="Actions\BlockAction.cs" />
     <Compile Include="Selectors\CastSelector.cs" />

@@ -29,12 +29,10 @@ namespace IngameScript.Timing
 					{
 						timer.Target += timer.Interval.Value;
 					}
-					else
-					{
-						Clear(timer);
-					}
 				}
 			}
+			// clear expired timeouts
+			_timers.RemoveAll((t) => !t.Interval.HasValue && _time > t.Target);
 		}
 
 		/// <summary>
