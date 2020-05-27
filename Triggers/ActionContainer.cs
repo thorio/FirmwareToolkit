@@ -5,16 +5,16 @@ namespace IngameScript.Triggers
 {
 	class ActionContainer
 	{
+		protected List<IAction> _actions;
+
 		protected ActionContainer()
 		{
-			Actions = new List<IAction>();
+			_actions = new List<IAction>();
 		}
 
-		protected List<IAction> Actions { get; }
-
-		public void AddAction(IAction action)
+		protected void AddAction(IAction action)
 		{
-			Actions.Add(action);
+			_actions.Add(action);
 		}
 
 		/// <summary>
@@ -22,7 +22,7 @@ namespace IngameScript.Triggers
 		/// </summary>
 		protected virtual void Run()
 		{
-			Actions.ForEach(a => a.Execute());
+			_actions.ForEach(a => a.Execute());
 		}
 	}
 }

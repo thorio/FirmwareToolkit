@@ -38,8 +38,11 @@
   <Import Project="MDK/MDK.options.props" />
   <Import Project="MDK/MDK.paths.props" Condition="exists('MDK/MDK.paths.props')" />
   <ItemGroup>
+    <Compile Include="Actions\IParametricAction.cs" />
+    <Compile Include="Complications\ParametricComplication.cs" />
     <Compile Include="Firmware.cs" />
     <Compile Include="Complications\Delay.cs" />
+    <Compile Include="Complications\ParametricCondition.cs" />
     <Compile Include="Timing\Timer.cs" />
     <Compile Include="Timing\TimingManager.cs" />
     <Compile Include="Selectors\BaseSelector.cs" />
@@ -49,6 +52,7 @@
     <Compile Include="Triggers\ArgumentTrigger.cs" />
     <Compile Include="Triggers\ActionContainer.cs" />
     <Compile Include="Triggers\IntervalTrigger.cs" />
+    <Compile Include="Triggers\ScriptableParametricTrigger.cs" />
     <Compile Include="Triggers\Trigger.cs" />
     <Compile Include="Actions\BlockAction.cs" />
     <Compile Include="Selectors\CastSelector.cs" />
@@ -74,6 +78,7 @@
     <Compile Include="Triggers\ScriptableTrigger.cs" />
     <Compile Include="Selectors\TagSelector.cs" />
     <Compile Include="Triggers\TriggerSet.cs" />
+    <Compile Include="Triggers\ParametricTrigger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
