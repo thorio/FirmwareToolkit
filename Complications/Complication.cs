@@ -1,14 +1,13 @@
 ﻿using IngameScript.Actions;
 using IngameScript.Triggers;
 
-namespace IngameScript.Special
+namespace IngameScript.Complications
 {
-	// TODO naming
-	abstract class BaseSpecial : ActionContainer, IAction
+	abstract class Complication : ActionContainer, IAction
 	{
 		public abstract void Execute();
 
-		public virtual BaseSpecial Then(IAction action)
+		public virtual Complication Then(IAction action)
 		{
 			AddAction(action);
 			return this;

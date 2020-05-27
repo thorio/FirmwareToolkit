@@ -1,6 +1,6 @@
-﻿namespace IngameScript.Special
+﻿namespace IngameScript.Complications
 {
-	class Delay : BaseSpecial
+	class Delay : Complication
 	{
 		private int _delay;
 

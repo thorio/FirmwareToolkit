@@ -39,13 +39,13 @@
   <Import Project="MDK/MDK.paths.props" Condition="exists('MDK/MDK.paths.props')" />
   <ItemGroup>
     <Compile Include="Firmware.cs" />
-    <Compile Include="Special\Delay.cs" />
+    <Compile Include="Complications\Delay.cs" />
     <Compile Include="Timing\Timer.cs" />
     <Compile Include="Timing\TimingManager.cs" />
     <Compile Include="Selectors\BaseSelector.cs" />
     <Compile Include="Selectors\NameSelector.cs" />
-    <Compile Include="Special\BaseSpecial.cs" />
-    <Compile Include="Special\Condition.cs" />
+    <Compile Include="Complications\Complication.cs" />
+    <Compile Include="Complications\Condition.cs" />
     <Compile Include="Triggers\ArgumentTrigger.cs" />
     <Compile Include="Triggers\ActionContainer.cs" />
     <Compile Include="Triggers\IntervalTrigger.cs" />

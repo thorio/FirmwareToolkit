@@ -1,9 +1,9 @@
 ﻿using IngameScript.Actions;
 using System;
 
-namespace IngameScript.Special
+namespace IngameScript.Complications
 {
-	class Condition : BaseSpecial
+	class Condition : Complication
 	{
 		private Func<bool> _condition;
 
@@ -14,7 +14,8 @@ namespace IngameScript.Special
 
 		public override void Execute()
 		{
-			if (_condition()) {
+			if (_condition())
+			{
 				Run();
 			}
 		}

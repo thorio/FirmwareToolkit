@@ -1,6 +1,6 @@
 ﻿using IngameScript.Actions;
 using IngameScript.Selectors;
-using IngameScript.Special;
+using IngameScript.Complications;
 using IngameScript.Triggers;
 using Sandbox.ModAPI.Ingame;
 using SpaceEngineers.Game.ModAPI.Ingame;
