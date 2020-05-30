@@ -9,14 +9,13 @@ namespace IngameScript.Selectors
 	{
 		protected readonly string _identifier;
 		protected IEnumerable<T> _blocks;
+
 		public BaseSelector(string identifier = null)
 		{
 			_identifier = identifier;
 		}
-		public abstract IEnumerable<T> GetBlocks_Inner();
 
-		public IEnumerable<IMyTerminalBlock> GetTerminalBlocks() =>
-			GetBlocks().Cast<IMyTerminalBlock>();
+		public abstract IEnumerable<T> GetBlocks_Inner();
 
 		public IEnumerable<T> GetBlocks()
 		{
@@ -24,9 +23,13 @@ namespace IngameScript.Selectors
 			return _blocks;
 		}
 
-		public ISelector<TCast> As<TCast>() where TCast : IMyTerminalBlock
-		{
-			return new CastSelector<T, TCast>(this);
-		}
+		public IEnumerable<IMyTerminalBlock> GetTerminalBlocks() =>
+			GetBlocks().Cast<IMyTerminalBlock>();
+
+		public T GetBlock() =>
+			GetBlocks().First();
+
+		public ISelector<TCast> As<TCast>() where TCast : IMyTerminalBlock =>
+			new CastSelector<T, TCast>(this);
 	}
 }

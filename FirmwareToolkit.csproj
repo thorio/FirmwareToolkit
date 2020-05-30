@@ -40,6 +40,8 @@
   <ItemGroup>
     <Compile Include="Actions\IParametricAction.cs" />
     <Compile Include="Complications\ParametricComplication.cs" />
+    <Compile Include="Constructs\AirlockConstruct.cs" />
+    <Compile Include="Constructs\Construct.cs" />
     <Compile Include="Firmware.cs" />
     <Compile Include="Complications\Delay.cs" />
     <Compile Include="Complications\ParametricCondition.cs" />
@@ -79,6 +81,7 @@
     <Compile Include="Selectors\TagSelector.cs" />
     <Compile Include="Triggers\TriggerSet.cs" />
     <Compile Include="Triggers\ParametricTrigger.cs" />
+    <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
