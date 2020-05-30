@@ -53,6 +53,7 @@
     <Compile Include="Complications\Condition.cs" />
     <Compile Include="Triggers\ArgumentTrigger.cs" />
     <Compile Include="Triggers\ActionContainer.cs" />
+    <Compile Include="Triggers\DoorStatusChangedTrigger.cs" />
     <Compile Include="Triggers\IntervalTrigger.cs" />
     <Compile Include="Triggers\ScriptableParametricTrigger.cs" />
     <Compile Include="Triggers\Trigger.cs" />
